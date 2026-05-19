@@ -12,6 +12,7 @@ with col_left:
     with st.container(border=True): 
         tt = st.write("行程描述")
         txt = st.text_input(" 時間：09:00")
+        
         if st.button("新增行程"):
             @st.dialog("新增完成")
             def showAdd():
@@ -32,16 +33,7 @@ with col_left:
                  "#1A73E8"
                 )
         color = st.color_picker("折線顏色", "#1f77b4")
-        st.markdown(f"""
-            <div style="
-                background-color:{color};
-                padding:20px;
-                color:white;
-            ">
-                自訂區塊
-            </div>
-            """, unsafe_allow_html=True)
-
+        st.button("你好" , color)
 
 with col_right: 
     st.write("###  行程檢視") 
