@@ -4,7 +4,8 @@ import datetime
 st.set_page_config(page_title="微型 TimeTree", layout="wide")
 mode = st.radio("選擇群組" , ["學生" , "老師" , "家長會" , "校友會"],horizontal=True)
 
-st.session_state.mylist = []
+if mylist not in st.session_state:
+    st.session_state.mylist = []
 l , r = st.columns(2)
 
 with l:
