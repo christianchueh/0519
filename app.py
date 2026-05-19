@@ -12,7 +12,7 @@ def get_color(group):
     if group == "學生":
         return "#E3F2FD"
     elif group == "老師":
-        return "#E8F5E9"
+        return "#00F509"
     elif group == "家長會":
         return "#FFF3E0"
     else:
