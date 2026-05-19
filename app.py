@@ -33,3 +33,9 @@ with col_right:
     st.button("控制項放右邊")
     with st.expander("查看進階提醒參數設定"):
         st.write("這裡是發信伺服器的底層設定...")
+    
+    @st.dialog("系統公告")
+    def show_alert():
+        st.write("本週作業請確認 requirements.txt 有正確設定！")
+    if st.button("查看公告"): 
+        show_alert()
