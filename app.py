@@ -10,7 +10,7 @@ col_left, col_right = st.columns([1, 2], gap="large")
 
 with col_left: 
     with st.container(border=True): 
-        st.write("行程描述")
+        tt = st.write("行程描述")
         txt = st.text_input(" 時間：09:00")
         if st.button("新增行程"):
             @st.dialog("新增完成")
@@ -31,6 +31,7 @@ with col_left:
                  "挑選辨識顏色",
                  "#1A73E8"
                 )
+        st.line_chart([1, 5, 2, 6, 2, 1] , my_color)
 
 
 with col_right: 
