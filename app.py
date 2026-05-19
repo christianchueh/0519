@@ -25,6 +25,6 @@ with col_right:
     with tab1:
         with st.container(border=True):
             st.write("本月行程")
-    with tab1:
+    with tab2:
         with st.container(border=True):
             st.write("已封存的行程")
