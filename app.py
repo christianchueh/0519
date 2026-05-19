@@ -27,3 +27,6 @@ with col_right:
     with tab2:
         with st.container(border=True):
             st.write("已封存的行程")
+
+with st.popover("快速進階篩選"):
+    st.checkbox("隱藏已過期行程")
