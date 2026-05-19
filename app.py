@@ -14,6 +14,7 @@ with col_left:
             @st.dialog("新增完成")
             def showAdd():
                 st.write(f"新增行程 {txt} 成功")
+            showAdd()
 
 
 with col_right: 
