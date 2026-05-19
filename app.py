@@ -6,7 +6,7 @@ with st.sidebar:
 
 col_left, col_center, col_right = st.columns([1, 2, 1.2], gap="large")
 
-with col_left: 
+with col_left(border=True): 
     st.write("###  新增區") 
     st.button("按鈕放左邊")
 
