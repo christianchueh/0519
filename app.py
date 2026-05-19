@@ -16,6 +16,17 @@ with col_left:
 with col_center: 
     st.write("###  看板區") 
     st.info("主要行程訊息放中間")
+    tab1, tab2, tab3 = st.tabs(["首頁", "圖表", "設定"])
+    with tab1: 
+        st.header("首頁") 
+        st.write("這是首頁內容")
+    with tab2: 
+        st.header("圖表") 
+        st.line_chart([1, 5, 2, 6, 2, 1])
+    with tab3: 
+        st.header("設定") 
+        name = st.text_input("你的名字") 
+        st.write(f"Hello {name}")
 
 with col_right: 
     st.write("###  設定區") 
