@@ -31,7 +31,16 @@ with col_left:
                  "挑選辨識顏色",
                  "#1A73E8"
                 )
-        st.line_chart([1, 5, 2, 6, 2, 1] , my_color)
+        color = st.color_picker("折線顏色", "#1f77b4")
+        st.markdown(f"""
+            <div style="
+                background-color:{color};
+                padding:20px;
+                color:white;
+            ">
+                自訂區塊
+            </div>
+            """, unsafe_allow_html=True)
 
 
 with col_right: 
