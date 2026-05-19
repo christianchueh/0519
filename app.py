@@ -20,11 +20,11 @@ with col_left:
 with col_right: 
     st.write("###  設定區") 
     st.button("控制項放右邊")
-    with st.expander("查看進階提醒參數設定"):
-        st.write("這裡是發信伺服器的底層設定...")
-    
-    @st.dialog("系統公告")
-    def show_alert():
-        st.write("本週作業請確認 requirements.txt 有正確設定！")
-    if st.button("查看公告"): 
-        show_alert()
+    tab1 , tab2 = st.tabs(["本月行程" , "已封存的行程"])
+
+    with tab1:
+        with st.container(border=True):
+            st.write("本月行程")
+    with tab1:
+        with st.container(border=True):
+            st.write("已封存的行程")
