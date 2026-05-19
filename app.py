@@ -96,39 +96,23 @@ with col_center:
     else:
         for ev in st.session_state.events:
             st.markdown(f"""
-            <div style="
-                border-left: 6px solid {ev['color']};
-                background-color: #ffffff;
-                padding: 12px;
-                margin-bottom: 10px;
-                border-radius: 10px;
-                box-shadow: 0 2px 6px rgba(0,0,0,0.05);
-            ">
-                <span style="
-                    background-color: {ev['color']}20;
-                    color: {ev['color']};
-                    padding: 2px 8px;
-                    border-radius: 10px;
-                    font-size: 12px;
-                    font-weight: bold;
-                ">
-                    #{ev['tag']}
-                </span>
-
-                <h4 style="margin: 8px 0;">
-                    {ev['title']}
-                </h4>
-
-                <p style="margin:0; font-size:13px;">
-                    📅 {ev['date']}<br>
-                    ⏰ {ev['start']} - {ev['end']}
-                </p>
-
-                <p style="margin-top:5px; font-size:12px; color:#666;">
-                    {ev['note']}
-                </p>
-            </div>
-            """, unsafe_allow_html=True)
+                <div style="border-left: 6px solid {ev['color']}; padding: 10px;">
+                    <span style="background:{ev['color']}22; color:{ev['color']}; padding:2px 6px; border-radius:10px;">
+                        {ev['tag']}
+                    </span>
+                
+                    <h4 style="margin:8px 0;">{ev['title']}</h4>
+                
+                    <p style="margin:0;">
+                        📅 {ev['date']}<br>
+                        ⏰ {ev['start']} - {ev['end']}
+                    </p>
+                
+                    <p style="margin-top:5px; color:#666;">
+                        {ev['note']}
+                    </p>
+                </div>
+                """, unsafe_allow_html=True)
 
 
 # =========================
