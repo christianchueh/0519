@@ -9,7 +9,7 @@ with l:
     st.text_input("行程主旨")
     st.color_picker("顏色設定")
 with r:
-    st.data_input("日期選擇" , datetime.date.today())
+    st.date_input("日期選擇" , datetime.date.today())
     st.time_input("時間選擇")
 
 with st.popover("快速進階篩選"):
