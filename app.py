@@ -25,3 +25,9 @@ tag = st.pills(
   "行程屬性",
   ["#工作", "#家庭", "#緊急"]
 )
+
+mins = st.number_input(
+ "行程開始前幾分鐘提醒？",
+ min_value=0, max_value=60,
+ value=15
+)
