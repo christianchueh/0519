@@ -36,7 +36,7 @@ with l:
         })
 with r:
 
-    st.container(border = True):
+    with st.container(border = True):
         for item in st.session_state.mylist:
             color = get_color(item["group"])
         
