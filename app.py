@@ -6,7 +6,7 @@ from datetime import datetime, time
 
 st.set_page_config(page_title="TimeTree 智慧行事曆", layout="wide")
 
-st.toast("TimeTree 系統已成功連線！", icon="")
+st.toast("TimeTree 系統已成功連線！")
 
 # 2. 側邊欄群組空間魔術 (API 2, 11, 25)
 
