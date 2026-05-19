@@ -34,6 +34,9 @@ with l:
             "time": str(t4),
             "remind": n1
         })
+    ni = st.number_input("要刪除的行程編號" , min_value = 0, max_value=len(st.session_state.mylist)-1 , value = 0)
+    if st.button("刪除行程"):
+        del st.session_state.mylist[ni]
 with r:
 
     with st.container(border = True):
