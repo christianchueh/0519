@@ -23,6 +23,10 @@ with col_left:
                   datetime.date.today()
                 )
 
+        meeting_time = st.time_input(
+                          "選擇時間"
+                        )
+
 
 with col_right: 
     st.write("###  行程檢視") 
