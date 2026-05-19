@@ -27,6 +27,11 @@ with col_left:
                           "選擇時間"
                         )
 
+        my_color = st.color_picker(
+                 "挑選辨識顏色",
+                 "#1A73E8"
+                )
+
 
 with col_right: 
     st.write("###  行程檢視") 
