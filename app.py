@@ -1,4 +1,6 @@
 import streamlit as st
+import datetime
+
 st.set_page_config(page_title="微型 TimeTree", layout="wide")
 with st.sidebar:
     st.write("###  行事曆群組")
@@ -15,6 +17,11 @@ with col_left:
             def showAdd():
                 st.write(f"新增行程 {txt} 成功")
             showAdd()
+
+        today = st.date_input(
+                  "選擇日期",
+                  datetime.date.today()
+                )
 
 
 with col_right: 
