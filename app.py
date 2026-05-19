@@ -36,24 +36,24 @@ with l:
         })
 with r:
 
-
-    for item in st.session_state.mylist:
-        color = get_color(item["group"])
-    
-        st.markdown(f"""
-        <div style="
-            background-color:{color};
-            padding:15px;
-            border-radius:12px;
-            margin-bottom:10px;
-        ">
-            <b>{item["group"]}</b><br>
-            📌 {item["title"]}<br>
-            📅 {item["date"]}<br>
-            ⏰ {item["time"]}<br>
-            🔔 提前 {item["remind"]} 分鐘
-        </div>
-        """, unsafe_allow_html=True)
+    st.container(border = True):
+        for item in st.session_state.mylist:
+            color = get_color(item["group"])
+        
+            st.markdown(f"""
+            <div style="
+                background-color:{color};
+                padding:15px;
+                border-radius:12px;
+                margin-bottom:10px;
+            ">
+                <b>{item["group"]}</b><br>
+                📌 {item["title"]}<br>
+                📅 {item["date"]}<br>
+                ⏰ {item["time"]}<br>
+                🔔 提前 {item["remind"]} 分鐘
+            </div>
+            """, unsafe_allow_html=True)
 
 
 
