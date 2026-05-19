@@ -1,38 +1,39 @@
 import streamlit as st
+st.set_page_config(page_title="微型 TimeTree", layout="wide")
+with st.sidebar:
+    st.write("###  行事曆群組")
+    st.radio("選擇群組", ["工作", "家庭" , "朋友"])
 
-st.title("極簡暫存示範")
+col_left, col_right = st.columns([1, 2], gap="large")
 
-# 1. 初始化
-if "my_list" not in st.session_state:
-    st.session_state.my_list = ["蘋果", "香蕉"]
+with col_left: 
+    with st.container(border=True): 
+        st.write("行程描述")
+        txt = st.text_input(" 時間：09:00")
+        if st.button("新增行程"):
+            @st.dialog("新增完成")
+            def showAdd():
+                st.write(f"新增行程 {txt} 成功")
+            showAdd()
 
-# 2. 新增功能
-new_item = st.text_input("輸入要新增的東西")
 
-if st.button("確認新增"):
-    # 加上去除空白的防禦
-    if new_item.strip():
-        st.session_state.my_list.append(new_item)
-        st.success(f"成功暫存：{new_item}")
-        st.rerun()
-    else:
-        st.error("請勿輸入空白內容！")
+with col_right: 
+    st.write("###  行程檢視") 
+    tab1 , tab2 = st.tabs(["本月行程" , "已封存的行程"])
 
+    with tab1:
+        with st.container(border=True):
+            st.write("本月行程")
+    with tab2:
+        with st.container(border=True):
+            st.write("已封存的行程")
+
+st.write("上面是大標題")
 st.divider()
+st.write("下面是內容區塊")
+st.button("按鈕 A")
+st.write("")  # 塞入一行空白間距
+st.button("按鈕 B")
 
-# 3. 刪除功能
-if st.session_state.my_list:
-    target = st.selectbox("選擇要刪除的東西", st.session_state.my_list)
-
-    if st.button("確認刪除"):
-        st.session_state.my_list.remove(target)
-        st.rerun()
-else:
-    st.write("目前清單空空如也")
-
-st.divider()
-
-# 4. 顯示結果
-st.write("📊 當前暫存清單：", st.session_state.my_list)
-
-# streamlit資料暫存範例
+with st.popover("快速進階篩選"):
+    st.checkbox("隱藏已過期行程")
