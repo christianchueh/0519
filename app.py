@@ -8,6 +8,15 @@ if "mylist" not in st.session_state:
     st.session_state.mylist = []
 l , r = st.columns(2)
 
+def get_color(group):
+    if group == "學生":
+        return "#E3F2FD"
+    elif group == "老師":
+        return "#E8F5E9"
+    elif group == "家長會":
+        return "#FFF3E0"
+    else:
+        return "#F3E5F5"
 with l:
     t1=st.text_input("行程主旨")
     t3=st.date_input("日期選擇" , datetime.date.today())
@@ -26,15 +35,6 @@ with l:
             "remind": n1
         })
 with r:
-    def get_color(group):
-        if group == "學生":
-            return "#E3F2FD"
-        elif group == "老師":
-            return "#E8F5E9"
-        elif group == "家長會":
-            return "#FFF3E0"
-        else:
-            return "#F3E5F5"
 
 
     for item in st.session_state.mylist:
