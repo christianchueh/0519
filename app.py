@@ -4,30 +4,25 @@ import datetime
 st.set_page_config(page_title="微型 TimeTree", layout="wide")
 mode = st.radio("選擇群組" , ["學生" , "老師" , "家長會" , "校友會"],horizontal=True)
 
-
+events = []
 l , r = st.columns(2)
 
 with l:
-    st.text_input("行程主旨")
-    st.color_picker("顏色設定")
+    t1=st.text_input("行程主旨")
+    t2=st.color_picker("顏色設定")
+    t3=st.date_input("日期選擇" , datetime.date.today())
+    t4=st.time_input("時間選擇")
+    n1=mins = st.number_input(
+     "行程開始前幾分鐘提醒？",
+     min_value=0, max_value=60,
+     value=15
+    )
+    if st.button("新增行程"):
+        events.append(f"行程主旨:{t1},日期選擇:{t3},時間選擇:{t4},幾分鐘前提醒:{n1})
 with r:
-    st.date_input("日期選擇" , datetime.date.today())
-    st.time_input("時間選擇")
+    for i in events:
+        st.write(i)
 
 
-view = st.segmented_control(
-  "檢視模式",
-  ["月視角", "週視角"],
-  default="月視角"
-)
 
-tag = st.pills(
-  "行程屬性",
-  ["#工作", "#家庭", "#緊急"]
-)
 
-mins = st.number_input(
- "行程開始前幾分鐘提醒？",
- min_value=0, max_value=60,
- value=15
-)
